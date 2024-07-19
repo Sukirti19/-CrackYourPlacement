@@ -1,0 +1,17 @@
+class Solution
+{
+    public long findMinDiff (ArrayList<Integer> a, int n, int m)
+    {
+        // your code here
+        Collections.sort(a);
+        int diff = a.get(m-1)-a.get(0);
+        int start = 0;
+        int end = m-1;
+        while (end < n){
+            diff=Math.min(diff,a.get(end)-a.get(start));
+            start++;
+            end++;
+        }
+        return diff;
+    }
+}
