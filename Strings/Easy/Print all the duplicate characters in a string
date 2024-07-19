@@ -1,0 +1,13 @@
+class Solution{
+  public void printDups(String str){
+    HashMap<Character,Integer> freq = new HashMap<>();
+    for (char c : str.toCharArray()){
+      freq.put(c,freq.getOrDefault(0,map.get(c)));
+    }
+    for (Map.Entry<Character,Integer> entry : freq.entrySet()){
+      if (entry.getValue()>1){
+        System.out.println(freq.getKey() + ", count = " + freq.get.Value());
+      }
+    }  
+  }
+}
