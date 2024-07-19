@@ -1,0 +1,28 @@
+import java.util.Dictionary;
+import java.util.Hashtable;
+
+class Solution {
+    public boolean isValid(String s) {
+        Dictionary<Character,Character> dict = new Hashtable<>();
+        dict.put('(',')');
+        dict.put('[',']');
+        dict.put('{','}');
+        Stack<Character> stack = new Stack<>();
+        stack.push(s.charAt(0));
+        for (int i=1;i<s.length();i++){
+            Character c = s.charAt(i);
+            if ( !stack.isEmpty() && dict.get(stack.peek())==c){
+                Character r = stack.pop();
+                
+            } else {
+                stack.push(c);
+            }
+        }
+        if (stack.isEmpty()){
+            return true;       
+        } else {
+            return false;
+        }
+        
+    }
+}
